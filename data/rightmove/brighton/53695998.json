@@ -1,0 +1,111 @@
+{
+    "id": 53695998,
+    "bedrooms": 1,
+    "numberOfImages": 9,
+    "numberOfFloorplans": 1,
+    "numberOfVirtualTours": 0,
+    "summary": "Wonderful one double bedroom period conversion flat offered with residents parking, double glazing and chain free, set in a popular location ideal for Crystal Palace station, park and 'triangle' ",
+    "displayAddress": "Anerley Road, London, SE20",
+    "countryCode": "GB",
+    "location": { "latitude": 51.414902, "longitude": -0.071259 },
+    "propertySubType": "Flat",
+    "listingUpdate": {
+        "listingUpdateReason": "new",
+        "listingUpdateDate": "2020-05-26T12:56:51Z"
+    },
+    "premiumListing": false,
+    "featuredProperty": false,
+    "price": {
+        "amount": 200000,
+        "frequency": "not specified",
+        "currencyCode": "GBP",
+        "displayPrices": [
+            { "displayPrice": "£200,000", "displayPriceQualifier": "" }
+        ]
+    },
+    "customer": {
+        "branchId": 14743,
+        "brandPlusLogoURI": "/brand/brand_rmchoice_logo_3029_0012.jpeg",
+        "contactTelephone": "020 8012 4329",
+        "branchDisplayName": "Robinson Jackson, Sydenham",
+        "branchName": "Sydenham",
+        "brandTradingName": "Robinson Jackson",
+        "branchLandingPageUrl": "/estate-agents/agent/Robinson-Jackson/Sydenham-14743.html",
+        "development": false,
+        "showReducedProperties": true,
+        "commercial": false,
+        "showOnMap": true,
+        "brandPlusLogoUrl": "https://media.rightmove.co.uk:443/dir/brand/brand_rmchoice_logo_3029_0012_max_100x50.jpeg"
+    },
+    "distance": null,
+    "transactionType": "buy",
+    "productLabel": { "productLabelText": "" },
+    "commercial": false,
+    "development": false,
+    "residential": true,
+    "students": false,
+    "auction": false,
+    "feesApply": false,
+    "feesApplyText": null,
+    "displaySize": "",
+    "showOnMap": true,
+    "propertyUrl": "/property-for-sale/property-53695998.html",
+    "contactUrl": "/property-for-sale/contactBranch.html?propertyId=53695998",
+    "channel": "BUY",
+    "firstVisibleDate": "2018-04-03T15:33:40Z",
+    "keywords": [],
+    "keywordMatchType": "no_keyword",
+    "saved": null,
+    "hidden": null,
+    "onlineViewingsAvailable": false,
+    "propertyImages": {
+        "images": [
+            {
+                "srcUrl": "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/15k/14743/53695998/14743_SYD180111_IMG_03_0000_max_476x317.jpg",
+                "url": "15k/14743/53695998/14743_SYD180111_IMG_03_0000.jpg"
+            },
+            {
+                "srcUrl": "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/15k/14743/53695998/14743_SYD180111_IMG_01_0000_max_476x317.jpg",
+                "url": "15k/14743/53695998/14743_SYD180111_IMG_01_0000.jpg"
+            },
+            {
+                "srcUrl": "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/15k/14743/53695998/14743_SYD180111_IMG_02_0000_max_476x317.jpg",
+                "url": "15k/14743/53695998/14743_SYD180111_IMG_02_0000.jpg"
+            },
+            {
+                "srcUrl": "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/15k/14743/53695998/14743_SYD180111_IMG_04_0000_max_476x317.jpg",
+                "url": "15k/14743/53695998/14743_SYD180111_IMG_04_0000.jpg"
+            },
+            {
+                "srcUrl": "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/15k/14743/53695998/14743_SYD180111_IMG_05_0000_max_476x317.jpg",
+                "url": "15k/14743/53695998/14743_SYD180111_IMG_05_0000.jpg"
+            },
+            {
+                "srcUrl": "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/15k/14743/53695998/14743_SYD180111_IMG_06_0000_max_476x317.jpg",
+                "url": "15k/14743/53695998/14743_SYD180111_IMG_06_0000.jpg"
+            },
+            {
+                "srcUrl": "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/15k/14743/53695998/14743_SYD180111_IMG_07_0000_max_476x317.jpg",
+                "url": "15k/14743/53695998/14743_SYD180111_IMG_07_0000.jpg"
+            },
+            {
+                "srcUrl": "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/15k/14743/53695998/14743_SYD180111_IMG_08_0000_max_476x317.jpg",
+                "url": "15k/14743/53695998/14743_SYD180111_IMG_08_0000.jpg"
+            },
+            {
+                "srcUrl": "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/15k/14743/53695998/14743_SYD180111_IMG_09_0000_max_476x317.jpg",
+                "url": "15k/14743/53695998/14743_SYD180111_IMG_09_0000.jpg"
+            }
+        ],
+        "mainImageSrc": "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/15k/14743/53695998/14743_SYD180111_IMG_03_0000_max_476x317.jpg",
+        "mainMapImageSrc": "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/15k/14743/53695998/14743_SYD180111_IMG_03_0000_max_296x197.jpg"
+    },
+    "displayStatus": "",
+    "formattedBranchName": " by Robinson Jackson, Sydenham",
+    "addedOrReduced": "Added yesterday",
+    "isRecent": true,
+    "formattedDistance": "",
+    "heading": "",
+    "hasBrandPlus": true,
+    "propertyTypeFullDescription": "1 bedroom flat for sale"
+}

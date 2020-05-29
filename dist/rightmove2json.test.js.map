@@ -1,0 +1,1 @@
+{"version":3,"file":"rightmove2json.test.js","sourceRoot":"","sources":["../src/rightmove2json.test.ts"],"names":[],"mappings":";;;;;;;;;;;AAAA,qDAAkD;AAElD,QAAQ,CAAC,gBAAgB,EAAE,GAAG,EAAE;IAC5B,IAAI,CAAC,gBAAgB,EAAE,GAAS,EAAE;QAC9B,MAAM,OAAO,GAAG,MAAM,+BAAc,EAAE,CAAC;QACvC,OAAO,CAAC,GAAG,CAAC,OAAO,CAAC,CAAC;IACzB,CAAC,CAAA,CAAC,CAAC;AACP,CAAC,CAAC,CAAC"}
