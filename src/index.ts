@@ -30,6 +30,6 @@ app.get('/search/:terms', (request, response) => {
     response.json(dataset.filter(({ id }) => results.includes(id)));
 });
 
-app.listen(8080, () => {
+app.listen(process.env.PORT, () => {
     console.log('server listing');
 });
