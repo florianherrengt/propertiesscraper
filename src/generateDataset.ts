@@ -53,6 +53,8 @@ export const generateDataset = () => {
                 .replace(/ +(?= )/g, '')
                 .replace(/[^a-zA-Z\s]/g, '')
                 .replace(/ +(?= )/g, ''),
+            price: meta.price.displayPrices.length > 0 ? meta.price.displayPrices[0].displayPrice : '£' + meta.price.amount,
+            title: meta.displayAddress
         };
     });
     fs.writeFileSync(
@@ -62,3 +64,5 @@ export const generateDataset = () => {
     );
     progressBar.stop();
 };
+
+generateDataset();
