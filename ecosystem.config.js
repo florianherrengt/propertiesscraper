@@ -3,6 +3,7 @@ module.exports = {
         {
             name: 'topfloorflat',
             script: 'dist/index.js',
+            output: '~/.pm2/logs/topfloorflat.log',
         },
     ],
     deploy: {
