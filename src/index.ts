@@ -20,6 +20,8 @@ const idx = lunr(function () {
     }, this);
 });
 
+app.get('/healthz', (_, response) => response.sendStatus(200));
+
 app.get('/search/:terms', (request, response) => {
     const results = idx
         .search(request.param('terms'))
