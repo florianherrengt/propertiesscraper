@@ -30,6 +30,8 @@ app.get('/search/:terms', (request, response) => {
     response.json(dataset.filter(({ id }) => results.includes(id)));
 });
 
-app.listen(process.env.PORT, () => {
-    console.log('server listing');
+const PORT = process.env.NODE_PORT || process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log('server listing on port ' + PORT);
 });
