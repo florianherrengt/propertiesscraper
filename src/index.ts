@@ -32,6 +32,11 @@ app.get('/search/:terms', (request, response) => {
     response.json(dataset.filter(({ id }) => results.includes(id)));
 });
 
+app.use(express.static('assets'));
+app.get('*', (_, response) => {
+    response.sendFile(path.join(__dirname + '/../assets/index.html'));
+});
+
 const PORT = process.env.NODE_PORT || process.env.PORT || 3000;
 
 app.listen(PORT, () => {
