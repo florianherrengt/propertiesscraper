@@ -35,7 +35,10 @@ cron.schedule(
     });
 
     app.get('/search/:terms', (request, response) => {
-        response.json(propertyModel.search(request.param('terms')));
+        const properties = propertyModel.search(request.param('terms'));
+        response.json(
+            properties.map((p) => ({ ...p, websiteUrl: p.domain + p.url })),
+        );
     });
 
     app.use(express.static('assets'));
