@@ -1,7 +1,7 @@
 module.exports = {
     apps: [
         {
-            name: 'topfloorflat.',
+            name: 'topfloorflat',
             script: 'dist/index.js',
         },
     ],
