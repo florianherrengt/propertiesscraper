@@ -6,6 +6,9 @@ import * as cors from 'cors';
 import { PropertyModel } from './models/property';
 import { start as parseRightmove } from './parsers/rightmove';
 import * as cron from 'node-cron';
+import { v4 as uuid } from 'uuid';
+
+const instanceId = uuid();
 
 cron.schedule(
     '0 1 * * *',
@@ -24,7 +27,12 @@ cron.schedule(
 
     app.use(cors());
 
-    app.get('/healthz', (_, response) => response.sendStatus(200));
+    app.get('/healthz', (_, response) => {
+        response.json({
+            ok: 1,
+            instanceId,
+        });
+    });
 
     app.get('/search/:terms', (request, response) => {
         response.json(propertyModel.search(request.param('terms')));

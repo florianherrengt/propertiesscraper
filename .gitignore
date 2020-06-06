@@ -3,5 +3,4 @@ node_modules
 dist
 assets
 *.db
-ecosystem.config.js
 data/frequency.json
