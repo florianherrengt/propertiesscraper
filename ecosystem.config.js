@@ -3,6 +3,14 @@ module.exports = {
         {
             name: 'topfloorflat',
             script: 'dist/index.js',
+            instances: 2,
+            exec_mode: 'cluster',
+            watch: true,
+            increment_var: 'PORT',
+            env: {
+                NODE_ENV: 'development',
+                PORT: 3000,
+            },
         },
     ],
     deploy: {
