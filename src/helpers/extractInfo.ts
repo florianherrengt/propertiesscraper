@@ -3,7 +3,8 @@ import * as path from 'path';
 import * as cheerio from 'cheerio';
 import * as _ from 'lodash';
 import * as cliProgress from 'cli-progress';
-import { regions } from './parsers/rightmove';
+import { regions } from '../parsers/rightmove';
+import { cleanText } from '../parsers/cleanText';
 
 const progressBar = new cliProgress.SingleBar(
     {},
@@ -37,7 +38,9 @@ export const extractInfo = () => {
     const fileNames = _.flatten(
         regions.map(({ name }) =>
             fs
-                .readdirSync(path.join(__dirname, '../data/rightmove/' + name))
+                .readdirSync(
+                    path.join(__dirname, '../../data/rightmove/' + name),
+                )
                 .filter((d) => d.endsWith('.html'))
                 .map((filename) => name + '/' + filename),
         ),
@@ -49,7 +52,7 @@ export const extractInfo = () => {
         fileNames.map((fileName) => {
             progressBar.increment(1);
             const file = fs.readFileSync(
-                path.join(__dirname, `../data/rightmove/${fileName}`),
+                path.join(__dirname, `../../data/rightmove/${fileName}`),
                 'utf-8',
             );
             const $ = cheerio.load(file);
@@ -57,7 +60,7 @@ export const extractInfo = () => {
                 .text()
                 .replace(/\n/gi, '')
                 .replace(/\t/gi, '');
-            return nGram(2, description).reduce(
+            return nGram(2, cleanText(description)).reduce(
                 (accumulator, currentValue) => [
                     ...accumulator,
                     currentValue.join('|'),
@@ -68,7 +71,7 @@ export const extractInfo = () => {
     );
     progressBar.stop();
     fs.writeFileSync(
-        path.join(__dirname, '../data/frequency.json'),
+        path.join(__dirname, '../../data/frequency.json'),
         JSON.stringify(
             _.orderBy(
                 Object.entries(_.countBy(bigrams)).map(

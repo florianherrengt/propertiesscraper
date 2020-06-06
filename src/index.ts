@@ -3,42 +3,41 @@ import * as lunr from 'lunr';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as cors from 'cors';
+import { PropertyModel } from './models/property';
+import { start as parseRightmove } from './parsers/rightmove';
+import * as cron from 'node-cron';
 
-const app = express();
-
-app.use(cors());
-
-const dataset: any[] = JSON.parse(
-    fs.readFileSync(path.join(__dirname, '../data/dataset.json'), 'utf-8'),
+cron.schedule(
+    '0 1 * * *',
+    () => {
+        parseRightmove();
+    },
+    {
+        scheduled: true,
+        timezone: 'Europe/London',
+    },
 );
 
-const idx = lunr(function () {
-    this.ref('id');
-    this.field('description');
-    dataset.forEach(function (doc) {
-        this.add(doc);
-    }, this);
-});
+(async () => {
+    const propertyModel = new PropertyModel();
+    const app = express();
 
-app.get('/healthz', (_, response) => response.sendStatus(200));
+    app.use(cors());
 
-app.get('/search/:terms', (request, response) => {
-    const results = idx
-        .search(request.param('terms'))
-        .slice(0, 100)
-        .map(({ ref }) => parseInt(ref, 10));
+    app.get('/healthz', (_, response) => response.sendStatus(200));
 
-    // response.json({ ok: 1 });
-    response.json(dataset.filter(({ id }) => results.includes(id)));
-});
+    app.get('/search/:terms', (request, response) => {
+        response.json(propertyModel.search(request.param('terms')));
+    });
 
-app.use(express.static('assets'));
-app.get('*', (_, response) => {
-    response.sendFile(path.join(__dirname + '/../assets/index.html'));
-});
+    app.use(express.static('assets'));
+    app.get('*', (_, response) => {
+        response.sendFile(path.join(__dirname + '/../assets/index.html'));
+    });
 
-const PORT = process.env.NODE_PORT || process.env.PORT || 3000;
+    const PORT = process.env.NODE_PORT || process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-    console.log('server listing on port ' + PORT);
-});
+    app.listen(PORT, () => {
+        console.log('server listing on port ' + PORT);
+    });
+})();
