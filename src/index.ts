@@ -1,12 +1,14 @@
 import * as express from 'express';
 import * as lunr from 'lunr';
 import * as fs from 'fs';
+import * as expressStaticGzip from 'express-static-gzip';
 import * as path from 'path';
 import * as cors from 'cors';
 import { PropertyModel } from './models/property';
 import { start as parseRightmove } from './parsers/rightmove';
 import * as cron from 'node-cron';
 import { v4 as uuid } from 'uuid';
+import * as compression from 'compression';
 
 const instanceId = uuid();
 
@@ -27,24 +29,27 @@ cron.schedule(
 
     app.use(cors());
 
-    app.get('/healthz', (_, response) => {
+    app.use('/api', compression());
+
+    app.get('/api/healthz', (_, response) => {
         response.json({
             ok: 1,
             instanceId,
         });
     });
 
-    app.get('/search/:terms', (request, response) => {
+    app.get('/api/search/:terms', (request, response) => {
         const properties = propertyModel.search(request.param('terms'));
         response.json(
             properties.map((p) => ({ ...p, websiteUrl: p.domain + p.url })),
         );
     });
 
-    app.use(express.static('assets'));
-    app.get('*', (_, response) => {
-        response.sendFile(path.join(__dirname + '/../assets/index.html'));
+    const staticMiddleware = expressStaticGzip('assets', {
+        enableBrotli: true,
     });
+    app.use('/', staticMiddleware);
+    app.use('*', staticMiddleware);
 
     const PORT = process.env.NODE_PORT || process.env.PORT || 3000;
 

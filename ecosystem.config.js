@@ -12,7 +12,7 @@ module.exports = {
             ref: 'origin/master',
             repo: 'git@github.com:florianherrengt/propertiesscraper.git',
             path: '/home/ubuntu/propertiesscraper',
-            'post-deploy': 'npm install && npm run build',
+            'post-deploy': 'npm install --production && npm run build',
         },
     },
 };
