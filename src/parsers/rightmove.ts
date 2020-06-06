@@ -89,6 +89,7 @@ export const getLinks = async (
             const data = {
                 propertyId: property.id.toString(),
                 title: property.displayAddress,
+                imageUrl: property.propertyImages.mainImageSrc,
                 summary: property.summary,
                 lat: property.location.latitude,
                 lon: property.location.longitude,

@@ -2,6 +2,7 @@ CREATE TABLE IF NOT EXISTS property (
     id int NOT NULL,
     propertyId varchar NOT NULL,
     url varchar NOT NULL,
+    imageUrl varchar NOT NULL,
     title varchar NOT NULL,
     keywords varchar NOT NULL, 
     summary varchar, 

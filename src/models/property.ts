@@ -15,6 +15,7 @@ interface Property {
     id: string;
     propertyId: string;
     url: string;
+    imageUrl: string;
     title: string;
     keywords: string;
     summary?: string;
@@ -36,7 +37,7 @@ export class PropertyModel {
     }
     create(property: Omit<Property, 'id'>) {
         const insert = db.prepare(
-            'INSERT INTO property (id, propertyId, title, summary, lat, lon, keywords, price, bedrooms, domain, url, region) VALUES (:id, :propertyId, :title, :summary, :lat, :lon, :keywords, :price, :bedrooms, :domain, :url, :region);',
+            'INSERT INTO property (id, propertyId, title, summary, lat, lon, keywords, price, bedrooms, domain, url, imageUrl, region) VALUES (:id, :propertyId, :title, :summary, :lat, :lon, :keywords, :price, :bedrooms, :domain, :url, :imageUrl, :region);',
         );
         insert.run({ id: uuid(), ...property });
     }
