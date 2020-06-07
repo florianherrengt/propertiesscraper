@@ -35,6 +35,7 @@ cron.schedule(
         response.json({
             ok: 1,
             instanceId,
+            date: new Date(),
         });
     });
 
